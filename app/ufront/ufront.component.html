@@ -1,0 +1,29 @@
+<div class="conatiner" style="padding-top:20px;">  
+  <div class="col-sm-5" style="padding-top:20px;padding-bottom:20px;" >  
+               
+  </div>  
+</div>  
+  <table class="table table-striped">  
+    <thead class="thead-dark">  
+      <tr>
+        <th> Patient name</th>
+        <th>Patient ID</th>
+        <th>Patient Visiting Date</th>
+        <th>Patient Last Visiting Date</th>
+        <th>Patient Symptoms</th>
+        <th>Doctor Assigned</th>
+        </tr>
+    </thead>  
+    <tbody>  
+      <tr *ngFor="let employee of employees |paginate: { itemsPerPage: 10, currentPage: p }">  
+        <td>{{employee.pat_Name}}</td>
+        <td>{{employee.patient_ID}}</td>
+        <td>{{employee.v_date}}</td>
+        <td>{{employee.last_vdate}}</td>
+        <td>{{employee.pat_Symptoms}}</td>
+        <td>{{employee.ename}}</td>
+        
+        </tr>
+    </tbody>  
+    <ul class="pagination">  <pagination-controls (pageChange)="p = $event"></pagination-controls> </ul>  
+  </table>  
